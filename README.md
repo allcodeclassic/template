@@ -1,1 +1,1 @@
-# wiki
+all template of classic
