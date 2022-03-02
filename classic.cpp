@@ -2,6 +2,7 @@
 // <3 NTV
 #include <bits/stdc++.h>
 
+// https://github.com/allcodeclassic/wiki
 namespace classic {
 	long long Dijkstra(int start, int ends, std::vector<std::vector<std::pair<long long, int>>> &adjacent) {
 		// Dijkstra's algorithm
@@ -62,11 +63,14 @@ namespace classic {
 	}
 	
 	struct Edmonds_Karp {
+		// Edmonds-Karp algorithm
+		// find max flow on graph
+		// time complextity O(egde * egde * vertex)
 		int size;
 		std::vector<std::vector<int>> adjacent;
 		std::vector<std::vector<int>> capacity;
 
-		Edmonds_Karp(int n) : size(n), adjacent(size + 1), capacity(size + 1, std::vector<int>(size + 1)) {}
+		Edmonds_Karp(int num_vertices) : size(num_vertices), adjacent(size), capacity(size, std::vector<int>(size, 0)) {}
 
 		void add_edge(int u, int v, int weight) {
 			adjacent[u].emplace_back(v);
@@ -98,11 +102,11 @@ namespace classic {
 		}
 
 		int max_flow(int start, int ends) {
-			int maximum_flow = 0;
-			std::vector<int> parent(size + 1);
+			int max_flow = 0;
+			std::vector<int> parent(size);
 			int delta;
 			while (delta = bfs(start, ends, parent)) {
-				maximum_flow += delta;
+				max_flow += delta;
 				int current = ends;
 				while (current != start) {
 					int previous = parent[current];
@@ -111,10 +115,10 @@ namespace classic {
 					current = previous;
 				}
 			}
-			return maximum_flow;
+			return max_flow;
 		}
 	};
-}; // template classic
+} // template classic
 
 int main() {
 	using namespace std;
