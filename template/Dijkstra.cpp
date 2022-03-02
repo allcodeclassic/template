@@ -76,7 +76,7 @@ int main() {
 		u--;
 		v--;
 		adjacent[u].emplace_back(weight, v);
-		// adjacent[v].emplace_back(weight, u); // undirected graph
+		adjacent[v].emplace_back(weight, u); // undirected graph
 	}
 	vector<long long> dist = classic::Dijkstra(0, 3, adjacent);
 	for (int i = 0; i < num_vertices; i++) {
