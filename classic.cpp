@@ -120,14 +120,5 @@ int main() {
 	using namespace std;
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	int n, m, s, t;
-	cin >> n >> m >> s >> t;
-	classic::Edmonds_Karp g(n);
-	for (int i = 1; i <= m; i++) {
-		int u, v, w;
-		cin >> u >> v >> w;
-		g.add_edge(u, v, w);
-	}
-	cout << g.max_flow(s, t);
 	return 0;
 }
