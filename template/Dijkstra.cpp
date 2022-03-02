@@ -1,6 +1,7 @@
 // author: classic
 #include <bits/stdc++.h>
 
+// https://github.com/allcodeclassic/wiki
 namespace classic {
 	long long Dijkstra(int start, int ends, std::vector<std::vector<std::pair<long long, int>>> &adjacent) {
 		// Dijkstra's algorithm
