@@ -1,5 +1,4 @@
 // author: classic
-// <3 NTV
 #include <bits/stdc++.h>
 
 // https://github.com/allcodeclassic/wiki
