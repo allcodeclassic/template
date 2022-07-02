@@ -1,7 +1,7 @@
 // author: classic
 #include <bits/stdc++.h>
 
-// https://github.com/allcodeclassic/wiki
+// https://github.com/allcodeclassic/template
 namespace classic {
 	struct Edmonds_Karp {
 		// Edmonds-Karp algorithm
