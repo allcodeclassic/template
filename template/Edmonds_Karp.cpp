@@ -3,7 +3,7 @@
 
 // https://github.com/allcodeclassic/template
 namespace classic {
-	struct Edmonds_Karp {
+	struct EdmondsKarp {
 		// Edmonds-Karp algorithm
 		// find max flow on graph
 		// time complextity O(egde * egde * vertex)
@@ -11,7 +11,7 @@ namespace classic {
 		std::vector<std::vector<int>> adjacent;
 		std::vector<std::vector<int>> capacity;
 
-		Edmonds_Karp(int num_vertices) : size(num_vertices), adjacent(size), capacity(size, std::vector<int>(size, 0)) {}
+		EdmondsKarp(int num_vertices) : size(num_vertices), adjacent(size), capacity(size, std::vector<int>(size, 0)) {}
 
 		void add_edge(int u, int v, int weight) {
 			adjacent[u].emplace_back(v);
@@ -69,7 +69,7 @@ int main() {
 	cin >> num_vertices >> num_edges >> start >> ends;
 	start--;
 	ends--;
-	classic::Edmonds_Karp g(num_vertices);
+	classic::EdmondsKarp g(num_vertices);
 	for (int i = 0; i < num_edges; i++) {
 		int u, v, weight;
 		cin >> u >> v >> weight;
